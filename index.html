@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Movie</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing:border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background:linear-gradient(#007bb2,#0d1423);
+    }
+    .card{
+        position: relative;
+        width: 320px;
+        height: 450px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-sizing: 0 15px 35px rgba(0,0,0,0.25);
+    }
+    .card .poster{
+        position: relative;
+
+    }
+    .card .poster img{
+        width: 100%;
+        transition: 0.5s;
+    }
+    .card .poster::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background:linear-gradient(0deg,#1064a6 50%, transparent);
+        transition: 0.5s;
+        z-index: 1;
+        bottom: -180px;
+        
+    }
+    .card:hover .poster::before{
+        bottom: 0px;
+    }
+    .card:hover .poster img{
+        transform: translateY(-50px);
+        filter: blur(5px);
+    }
+    .card .details{
+        position: absolute;
+        bottom: -175px;
+        left:0;
+        z-index: 2;
+        padding: 20px;
+        transition: 0.5s;
+    }
+    .card:hover .details{
+        bottom: 0px;
+    }
+    .card .details .logo{
+        width: 180px;
+    }
+    .card .details h3{
+        font-size: 0.8em;
+        color: #fff;
+    }
+    .card .details .rating{
+        position: relative;
+        padding: 5px 0;
+    }
+    .card .details .rating .fa-star{
+        color: yellow;
+        font-size: 1em;
+    }
+    .card .details .rating span{
+        color: white;
+        margin-left: 5px;
+    }
+    .card .details .tags{
+        position: relative;
+        margin-top: 5px;
+    }
+    .card .details .tags span{
+        padding: 2px 5px ;
+        color:#fff;
+        background:#03a8f5;
+        border-radius: 5px;
+    }
+    .card .details .tags span:nth-child(2){
+        background: #ff5722;
+    }
+    .card .details .info{
+        color: #fff;
+        margin-top: 20px;
+    }
+    .card .details .cast{
+        position: relative;
+    }
+    .card .details .cast h4{
+        color: #fff;
+        margin-top: 10px;
+    }
+    .card .details .cast ul{
+        position: relative;
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+    }
+    .card .details .cast ul li{
+        list-style: none;
+        overflow: hidden;
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        border: 2px solid #fff;
+    }
+    .card .details .cast ul li img{
+        max-width: 100%;
+    }
+    </style>
+</head>
+<body>
+    <div class="card">
+    <div class="poster">
+    <img src="image/poster.jpg" alt="">
+    </div>
+    <div class="details">
+        <img src="image/avaterlogo.png" alt="" class="logo">
+        <h3>Directed by James cameron</h3>
+        <div class="rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <span>4/5</span>
+        </div>
+        <div class="tags">
+        <span>sci-fi</span>
+        <span>Action</span>
+        </div>
+        <div class="info">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.It has survived not only five centuries software...</p>
+        </div>
+        <div class="cast">
+        <h4>Cast</h4>
+        <ul>
+        <li><img src="image/cast1.jpg" alt=""></li>
+        <li><img src="image/cast2.jpg" alt=""></li>
+        <li><img src="image/cast3.jpg" alt=""></li>
+        <li><img src="image/cast4.jpg" alt=""></li>
+        <li><img src="image/cast5.jpg" alt=""></li>
+        </ul>
+        </div>
+    </div>
+    </div>
+</body>
+</html>
